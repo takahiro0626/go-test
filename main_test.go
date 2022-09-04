@@ -2,6 +2,8 @@ package main
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestAdd(t *testing.T) {
@@ -29,4 +31,9 @@ func TestAdd(t *testing.T) {
 			t.Errorf("add() = %v, want %v", add(1, -2), -1)
 		}
 	})
+
+}
+func TestAddAssert(t *testing.T) {
+	assert.Equal(t, add(1, 1), 2)
+	assert.NotEqual(t, add(1, 1), 1)
 }
